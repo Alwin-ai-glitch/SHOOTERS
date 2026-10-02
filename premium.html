@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Premium FOOTWEAR</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        FOOTWEAR
+        <small>Premium collection</small>
+      </div>
+      <div class="header-right">
+        <div class="cart-badge" onclick="Store.openCart()">
+          🛒 <span id="cartCount">0</span>
+        </div>
+        <button class="whatsapp-btn" onclick="Store.openCart()">WhatsApp</button>
+      </div>
+    </header>
+
+    <div class="tabs">
+      <a href="index.html" class="tab">All</a>
+      <a href="premium.html" class="tab active">Premium </a>
+      <a href="standard.html" class="tab">Standard </a>
+      <a href="budgeted.html" class="tab">Nice</a>
+    </div>
+
+    <div class="search-wrap">
+      <div class="search-box">
+        🔍
+        <input
+          id="searchInput"
+          type="text"
+          placeholder="Search Premium shoes..."
+          oninput="Store.search()"
+        />
+      </div>
+    </div>
+
+    <div class="page">
+      <div class="grid" id="grid-premium"></div>
+    </div>
+
+    <div id="cartOverlay" class="cart-overlay" onclick="Store.closeCart()"></div>
+
+    <div id="cartDrawer" class="cart-drawer">
+      <div class="cart-head">
+        <h2>🛒 Your Order</h2>
+        <span onclick="Store.closeCart()" style="cursor:pointer;">✕</span>
+      </div>
+      <div id="cartItems" class="cart-items"></div>
+      <div class="cart-foot">
+        <div class="total-row">
+          <span>Total:</span>
+          <span id="cartTotal">$0.00</span>
+        </div>
+        <button class="btn-order" onclick="Store.checkout()">Order via WhatsApp</button>
+        <button class="btn-continue" onclick="Store.closeCart()">Continue Shopping</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
